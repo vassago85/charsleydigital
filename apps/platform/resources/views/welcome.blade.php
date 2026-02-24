@@ -14,7 +14,7 @@
                 theme: {
                     extend: {
                         colors: {
-                            teal: { 50:'#f0fdfa',100:'#ccfbf1',200:'#99f6e4',300:'#5eead4',400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',700:'#0f766e',800:'#115e59',900:'#134e4a',950:'#042f2e' }
+                            brand: { 50:'#eff5ff',100:'#dae6ff',200:'#bdd4ff',300:'#90b8ff',400:'#5b91fc',500:'#3570e2',600:'#2f6cb5',700:'#1e53a0',800:'#1e4784',900:'#1e3f6e',950:'#142849' }
                         }
                     }
                 }
@@ -37,11 +37,11 @@
                 <span class="text-lg font-bold text-slate-900">Charsley Digital</span>
             </a>
             <div class="hidden items-center gap-8 md:flex">
-                <a href="#services" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Services</a>
-                <a href="#products" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">Products</a>
-                <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">How It Works</a>
-                <a href="#about" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">About</a>
-                <a href="#contact" class="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700 transition-colors">Get In Touch</a>
+                <a href="#services" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Services</a>
+                <a href="#products" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Products</a>
+                <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">How It Works</a>
+                <a href="#about" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">About</a>
+                <a href="#contact" class="rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700 transition-colors">Get In Touch</a>
             </div>
             {{-- Mobile menu button --}}
             <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden rounded p-2 text-slate-600 hover:bg-slate-100">
@@ -50,11 +50,11 @@
         </div>
         <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-6 py-4 md:hidden">
             <div class="flex flex-col gap-3">
-                <a href="#services" class="text-sm font-medium text-slate-600 hover:text-teal-600">Services</a>
-                <a href="#products" class="text-sm font-medium text-slate-600 hover:text-teal-600">Products</a>
-                <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-teal-600">How It Works</a>
-                <a href="#about" class="text-sm font-medium text-slate-600 hover:text-teal-600">About</a>
-                <a href="#contact" class="rounded-md bg-teal-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-teal-700">Get In Touch</a>
+                <a href="#services" class="text-sm font-medium text-slate-600 hover:text-brand-600">Services</a>
+                <a href="#products" class="text-sm font-medium text-slate-600 hover:text-brand-600">Products</a>
+                <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-brand-600">How It Works</a>
+                <a href="#about" class="text-sm font-medium text-slate-600 hover:text-brand-600">About</a>
+                <a href="#contact" class="rounded-md bg-brand-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-brand-700">Get In Touch</a>
             </div>
         </div>
     </nav>
@@ -66,13 +66,13 @@
         </div>
         <div class="relative mx-auto max-w-4xl px-6 text-center">
             <h1 class="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-                Reliable. Hosted. <span class="text-teal-400">Maintainable.</span>
+                Reliable. Hosted. <span class="text-brand-400">Maintainable.</span>
             </h1>
             <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300 md:text-xl">
                 Web applications and hosting you can depend on. No hype &mdash; just solid builds, predictable costs, and systems that grow with you.
             </p>
             <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                <a href="#contact" class="inline-flex items-center rounded-lg bg-teal-500 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-teal-400 transition-colors">
+                <a href="#contact" class="inline-flex items-center rounded-lg bg-brand-500 px-8 py-4 text-base font-semibold text-white shadow-lg hover:bg-brand-400 transition-colors">
                     Request a Discovery Call
                     <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
@@ -89,21 +89,21 @@
         <div class="mx-auto max-w-6xl px-6">
             <div class="grid gap-8 md:grid-cols-3">
                 <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-teal-100 text-teal-600">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     </div>
                     <h3 class="mt-5 text-lg font-semibold text-slate-900">Automation First</h3>
                     <p class="mt-2 text-slate-600">We automate repetitive work so your team can focus on what matters.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-teal-100 text-teal-600">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/></svg>
                     </div>
                     <h3 class="mt-5 text-lg font-semibold text-slate-900">Hosted Responsibly</h3>
                     <p class="mt-2 text-slate-600">Dedicated, secure hosting with predictable costs. No surprises.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-teal-100 text-teal-600">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     </div>
                     <h3 class="mt-5 text-lg font-semibold text-slate-900">Built for Growth</h3>
@@ -122,7 +122,7 @@
             </div>
             <div class="mt-14 grid gap-8 sm:grid-cols-2">
                 <div class="flex gap-4">
-                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-600 text-white">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
                     <div>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-600 text-white">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
                     </div>
                     <div>
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-600 text-white">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                     </div>
                     <div>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-600 text-white">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                     </div>
                     <div>
@@ -170,7 +170,7 @@
             </div>
             <div class="mt-14 grid gap-8 md:grid-cols-3">
                 <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-gradient-to-br from-teal-600 to-teal-800 p-6">
+                    <div class="bg-gradient-to-br from-brand-600 to-brand-800 p-6">
                         <h3 class="text-xl font-bold text-white">NRAPA Portal</h3>
                     </div>
                     <div class="p-6">
@@ -196,7 +196,7 @@
                     </div>
                 </div>
                 <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-gradient-to-br from-teal-700 to-slate-800 p-6">
+                    <div class="bg-gradient-to-br from-brand-700 to-slate-800 p-6">
                         <h3 class="text-xl font-bold text-white">Custom Client Apps</h3>
                     </div>
                     <div class="p-6">
@@ -221,22 +221,22 @@
             </div>
             <div class="mt-14 grid gap-8 md:grid-cols-4">
                 <div class="text-center">
-                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-xl font-bold text-white">1</div>
+                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-600 text-xl font-bold text-white">1</div>
                     <h3 class="mt-4 text-lg font-semibold text-slate-900">Discovery</h3>
                     <p class="mt-2 text-slate-600">We understand your needs &mdash; no pricing before we properly scope.</p>
                 </div>
                 <div class="text-center">
-                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-xl font-bold text-white">2</div>
+                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-600 text-xl font-bold text-white">2</div>
                     <h3 class="mt-4 text-lg font-semibold text-slate-900">Proposal</h3>
                     <p class="mt-2 text-slate-600">A clear proposal tailored to your requirements. No surprises.</p>
                 </div>
                 <div class="text-center">
-                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-xl font-bold text-white">3</div>
+                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-600 text-xl font-bold text-white">3</div>
                     <h3 class="mt-4 text-lg font-semibold text-slate-900">Build</h3>
                     <p class="mt-2 text-slate-600">Implementation with regular updates so you always know where things stand.</p>
                 </div>
                 <div class="text-center">
-                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-xl font-bold text-white">4</div>
+                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand-600 text-xl font-bold text-white">4</div>
                     <h3 class="mt-4 text-lg font-semibold text-slate-900">Launch &amp; Support</h3>
                     <p class="mt-2 text-slate-600">Ongoing hosting, maintenance, and enhancements. We don't disappear.</p>
                 </div>
@@ -252,28 +252,28 @@
             <div class="mt-12 grid gap-6 text-left sm:grid-cols-2">
                 <div class="rounded-lg border border-slate-700 bg-slate-800/50 p-6">
                     <div class="flex items-center gap-3">
-                        <svg class="h-6 w-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <svg class="h-6 w-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                         <h3 class="font-semibold">Small once-off implementation fee</h3>
                     </div>
                     <p class="mt-2 text-sm text-slate-400">Scoped to exactly what you need. Pay for what's built.</p>
                 </div>
                 <div class="rounded-lg border border-slate-700 bg-slate-800/50 p-6">
                     <div class="flex items-center gap-3">
-                        <svg class="h-6 w-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <svg class="h-6 w-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                         <h3 class="font-semibold">Monthly usage-based fee</h3>
                     </div>
                     <p class="mt-2 text-sm text-slate-400">Scales with your actual usage. Fair and predictable.</p>
                 </div>
                 <div class="rounded-lg border border-slate-700 bg-slate-800/50 p-6">
                     <div class="flex items-center gap-3">
-                        <svg class="h-6 w-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <svg class="h-6 w-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                         <h3 class="font-semibold">Small monthly hosting &amp; maintenance</h3>
                     </div>
                     <p class="mt-2 text-sm text-slate-400">Keeps your platform secure, updated, and running smoothly.</p>
                 </div>
                 <div class="rounded-lg border border-slate-700 bg-slate-800/50 p-6">
                     <div class="flex items-center gap-3">
-                        <svg class="h-6 w-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <svg class="h-6 w-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                         <h3 class="font-semibold">Enhancements scoped &amp; approved</h3>
                     </div>
                     <p class="mt-2 text-sm text-slate-400">Major changes quoted separately. No surprise invoices.</p>
@@ -291,7 +291,7 @@
                     <p class="mt-4 text-lg text-slate-600">Built on reliability, clarity, and respect for your data.</p>
                     <div class="mt-8 space-y-6">
                         <div class="flex gap-4">
-                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-600">
+                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             </div>
                             <div>
@@ -300,7 +300,7 @@
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-600">
+                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             </div>
                             <div>
@@ -309,7 +309,7 @@
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-600">
+                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             </div>
                             <div>
@@ -318,7 +318,7 @@
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-600">
+                            <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             </div>
                             <div>
@@ -331,8 +331,8 @@
                 <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
                     <h3 class="text-xl font-bold text-slate-900">Data Ownership &amp; Control</h3>
                     <p class="mt-4 text-slate-600">You own and control your data. We host it in dedicated space you pay for &mdash; if you ever want to leave, your data and code go with you. That's how it should be.</p>
-                    <div class="mt-6 rounded-lg bg-teal-50 p-4">
-                        <p class="text-sm font-medium text-teal-800">No vendor lock-in. Your code. Your data. Always.</p>
+                    <div class="mt-6 rounded-lg bg-brand-50 p-4">
+                        <p class="text-sm font-medium text-brand-800">No vendor lock-in. Your code. Your data. Always.</p>
                     </div>
                 </div>
             </div>
@@ -348,10 +348,10 @@
             </div>
 
             @if (session('lead_success'))
-                <div class="mt-10 rounded-lg border border-teal-200 bg-teal-50 p-6 text-center">
-                    <svg class="mx-auto h-12 w-12 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <h3 class="mt-4 text-lg font-semibold text-teal-900">Thank you!</h3>
-                    <p class="mt-2 text-teal-700">We've received your enquiry and will be in touch within one business day.</p>
+                <div class="mt-10 rounded-lg border border-brand-200 bg-brand-50 p-6 text-center">
+                    <svg class="mx-auto h-12 w-12 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h3 class="mt-4 text-lg font-semibold text-brand-900">Thank you!</h3>
+                    <p class="mt-2 text-brand-700">We've received your enquiry and will be in touch within one business day.</p>
                 </div>
             @else
                 <form method="POST" action="{{ route('contact.submit') }}" class="mt-10 space-y-6">
@@ -372,28 +372,28 @@
                     <div class="grid gap-6 sm:grid-cols-2">
                         <div>
                             <label for="org_name" class="block text-sm font-medium text-slate-700">Organisation Name <span class="text-red-500">*</span></label>
-                            <input type="text" id="org_name" name="org_name" required value="{{ old('org_name') }}" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                            <input type="text" id="org_name" name="org_name" required value="{{ old('org_name') }}" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-brand-500 focus:ring-brand-500">
                         </div>
                         <div>
                             <label for="contact_name" class="block text-sm font-medium text-slate-700">Contact Name <span class="text-red-500">*</span></label>
-                            <input type="text" id="contact_name" name="contact_name" required value="{{ old('contact_name') }}" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                            <input type="text" id="contact_name" name="contact_name" required value="{{ old('contact_name') }}" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-brand-500 focus:ring-brand-500">
                         </div>
                     </div>
 
                     <div class="grid gap-6 sm:grid-cols-2">
                         <div>
                             <label for="email" class="block text-sm font-medium text-slate-700">Email <span class="text-red-500">*</span></label>
-                            <input type="email" id="email" name="email" required value="{{ old('email') }}" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                            <input type="email" id="email" name="email" required value="{{ old('email') }}" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-brand-500 focus:ring-brand-500">
                         </div>
                         <div>
                             <label for="phone" class="block text-sm font-medium text-slate-700">Phone</label>
-                            <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                            <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-brand-500 focus:ring-brand-500">
                         </div>
                     </div>
 
                     <div>
                         <label for="system_type" class="block text-sm font-medium text-slate-700">What kind of system do you need? <span class="text-red-500">*</span></label>
-                        <select id="system_type" name="system_type" required class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        <select id="system_type" name="system_type" required class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-brand-500 focus:ring-brand-500">
                             <option value="">Select one...</option>
                             <option value="Membership portal" @selected(old('system_type') === 'Membership portal')>Membership Portal</option>
                             <option value="Admin/operations app" @selected(old('system_type') === 'Admin/operations app')>Admin / Operations App</option>
@@ -406,12 +406,12 @@
 
                     <div>
                         <label for="problem_description" class="block text-sm font-medium text-slate-700">Tell us about your project <span class="text-red-500">*</span></label>
-                        <textarea id="problem_description" name="problem_description" required rows="5" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:ring-teal-500">{{ old('problem_description') }}</textarea>
+                        <textarea id="problem_description" name="problem_description" required rows="5" class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-brand-500 focus:ring-brand-500">{{ old('problem_description') }}</textarea>
                     </div>
 
                     <div>
                         <label for="timeline" class="block text-sm font-medium text-slate-700">Timeline <span class="text-red-500">*</span></label>
-                        <select id="timeline" name="timeline" required class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        <select id="timeline" name="timeline" required class="mt-1 block w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 shadow-sm focus:border-brand-500 focus:ring-brand-500">
                             <option value="">Select one...</option>
                             <option value="ASAP" @selected(old('timeline') === 'ASAP')>ASAP</option>
                             <option value="1-3 months" @selected(old('timeline') === '1-3 months')>1&ndash;3 months</option>
@@ -421,11 +421,11 @@
                     </div>
 
                     <div class="flex items-start gap-3">
-                        <input type="checkbox" id="consent" name="consent" value="1" required class="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500" @checked(old('consent'))>
+                        <input type="checkbox" id="consent" name="consent" value="1" required class="mt-1 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500" @checked(old('consent'))>
                         <label for="consent" class="text-sm text-slate-600">I consent to Charsley Digital storing this information to respond to my enquiry. <span class="text-red-500">*</span></label>
                     </div>
 
-                    <button type="submit" class="w-full rounded-lg bg-teal-600 px-6 py-4 text-base font-semibold text-white shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors">
+                    <button type="submit" class="w-full rounded-lg bg-brand-600 px-6 py-4 text-base font-semibold text-white shadow-md hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 transition-colors">
                         Send Enquiry
                     </button>
                 </form>
@@ -445,13 +445,13 @@
                 </div>
                 <div class="flex items-center gap-6">
                     @auth
-                        <a href="{{ route('admin.leads.index') }}" class="text-sm text-slate-500 hover:text-teal-600 transition-colors">Admin</a>
+                        <a href="{{ route('admin.leads.index') }}" class="text-sm text-slate-500 hover:text-brand-600 transition-colors">Admin</a>
                         <form method="POST" action="{{ route('logout') }}" class="inline">
                             @csrf
-                            <button type="submit" class="text-sm text-slate-500 hover:text-teal-600 transition-colors">Log out</button>
+                            <button type="submit" class="text-sm text-slate-500 hover:text-brand-600 transition-colors">Log out</button>
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-slate-500 hover:text-teal-600 transition-colors">Admin Login</a>
+                        <a href="{{ route('login') }}" class="text-sm text-slate-500 hover:text-brand-600 transition-colors">Admin Login</a>
                     @endauth
                 </div>
             </div>

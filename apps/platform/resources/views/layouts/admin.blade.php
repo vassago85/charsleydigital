@@ -14,20 +14,20 @@
     <header class="border-b border-slate-200 bg-white">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
             <div class="flex items-center gap-6">
-                <a href="{{ route('admin.leads.index') }}" class="font-semibold text-slate-900 {{ request()->routeIs('admin.leads.*') ? 'text-teal-600' : '' }}">Leads</a>
-                <a href="{{ route('admin.settings') }}" class="text-sm font-medium text-slate-600 hover:text-teal-600 {{ request()->routeIs('admin.settings*') ? 'text-teal-600' : '' }}">Settings</a>
+                <a href="{{ route('admin.leads.index') }}" class="font-semibold text-slate-900 {{ request()->routeIs('admin.leads.*') ? 'text-blue-600' : '' }}">Leads</a>
+                <a href="{{ route('admin.settings') }}" class="text-sm font-medium text-slate-600 hover:text-blue-600 {{ request()->routeIs('admin.settings*') ? 'text-blue-600' : '' }}">Settings</a>
             </div>
             @auth
                 <form method="POST" action="{{ route('logout') }}" class="inline">
                     @csrf
-                    <button type="submit" class="text-sm text-slate-600 hover:text-teal-600">Log out</button>
+                    <button type="submit" class="text-sm text-slate-600 hover:text-blue-600">Log out</button>
                 </form>
             @endauth
         </nav>
     </header>
     <main class="mx-auto max-w-6xl px-6 py-8">
         @if (session('success'))
-            <div class="mb-6 rounded-md bg-teal-100 p-4 text-teal-800">{{ session('success') }}</div>
+            <div class="mb-6 rounded-md bg-blue-100 p-4 text-blue-800">{{ session('success') }}</div>
         @endif
         @yield('content')
     </main>

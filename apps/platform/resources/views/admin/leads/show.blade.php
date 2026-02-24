@@ -5,7 +5,7 @@
 @section('content')
 <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
     <div>
-        <a href="{{ route('admin.leads.index') }}" class="text-sm text-slate-600 hover:text-teal-600">&larr; Back to leads</a>
+        <a href="{{ route('admin.leads.index') }}" class="text-sm text-slate-600 hover:text-blue-600">&larr; Back to leads</a>
         <h1 class="mt-2 text-2xl font-semibold">{{ $lead->org_name }}</h1>
         <p class="text-slate-600">{{ $lead->contact_name }} &middot; {{ $lead->email }}</p>
     </div>
@@ -19,7 +19,7 @@
                 <div><dt class="text-sm text-slate-500">Organisation</dt><dd>{{ $lead->org_name }}</dd></div>
                 <div><dt class="text-sm text-slate-500">Contact</dt><dd>{{ $lead->contact_name }}</dd></div>
                 <div><dt class="text-sm text-slate-500">Role</dt><dd>{{ $lead->role_title ?? '—' }}</dd></div>
-                <div><dt class="text-sm text-slate-500">Email</dt><dd><a href="mailto:{{ $lead->email }}" class="text-teal-600 hover:underline">{{ $lead->email }}</a></dd></div>
+                <div><dt class="text-sm text-slate-500">Email</dt><dd><a href="mailto:{{ $lead->email }}" class="text-blue-600 hover:underline">{{ $lead->email }}</a></dd></div>
                 <div><dt class="text-sm text-slate-500">Phone</dt><dd>{{ $lead->phone ?? '—' }}</dd></div>
                 <div><dt class="text-sm text-slate-500">System type</dt><dd>{{ str_replace('_', ' ', $lead->system_type) }}</dd></div>
                 <div class="sm:col-span-2"><dt class="text-sm text-slate-500">Description</dt><dd class="mt-1 whitespace-pre-wrap">{{ $lead->problem_description }}</dd></div>
@@ -40,7 +40,7 @@
             <form method="POST" action="{{ route('admin.leads.notes.store', $lead) }}" class="mb-6">
                 @csrf
                 <textarea name="note" rows="3" required class="w-full rounded-md border-slate-300 shadow-sm" placeholder="Add a note..."></textarea>
-                <button type="submit" class="mt-2 rounded-md bg-teal-600 px-4 py-2 text-white hover:bg-teal-700">Add note</button>
+                <button type="submit" class="mt-2 rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Add note</button>
             </form>
             <div class="space-y-4">
                 @forelse ($lead->notes as $note)
@@ -73,7 +73,7 @@
                     <label for="follow_up_date" class="block text-sm font-medium text-slate-700">Follow-up date</label>
                     <input type="date" name="follow_up_date" id="follow_up_date" value="{{ $lead->follow_up_date?->format('Y-m-d') }}" class="mt-1 w-full rounded-md border-slate-300 shadow-sm">
                 </div>
-                <button type="submit" class="w-full rounded-md bg-teal-600 px-4 py-2 text-white hover:bg-teal-700">Save</button>
+                <button type="submit" class="w-full rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Save</button>
             </div>
         </form>
 

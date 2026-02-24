@@ -26,7 +26,7 @@
     </select>
     <input type="date" name="from" value="{{ request('from') }}" class="rounded-md border-slate-300">
     <input type="date" name="to" value="{{ request('to') }}" class="rounded-md border-slate-300">
-    <button type="submit" class="rounded-md bg-teal-600 px-4 py-2 text-white hover:bg-teal-700">Filter</button>
+    <button type="submit" class="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Filter</button>
 </form>
 
 <div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
@@ -52,7 +52,7 @@
                     </td>
                     <td class="px-6 py-4 text-sm text-slate-600">{{ $lead->created_at->format('Y-m-d H:i') }}</td>
                     <td class="px-6 py-4">
-                        <a href="{{ route('admin.leads.show', $lead) }}" class="text-teal-600 hover:text-teal-700">View</a>
+                        <a href="{{ route('admin.leads.show', $lead) }}" class="text-blue-600 hover:text-blue-700">View</a>
                     </td>
                 </tr>
             @empty

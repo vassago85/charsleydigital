@@ -36,28 +36,28 @@
         <div class="grid gap-4 sm:grid-cols-2">
             <div>
                 <label for="mailgun_domain" class="block text-sm font-medium text-slate-700">Domain</label>
-                <input type="text" id="mailgun_domain" name="mailgun_domain" value="{{ old('mailgun_domain', $settings['mailgun_domain']) }}" placeholder="mg.example.com" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="text" id="mailgun_domain" name="mailgun_domain" value="{{ old('mailgun_domain', $settings['mailgun_domain']) }}" placeholder="mg.example.com" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
             </div>
             <div>
                 <label for="mailgun_secret" class="block text-sm font-medium text-slate-700">API Key</label>
-                <input type="password" id="mailgun_secret" name="mailgun_secret" value="{{ old('mailgun_secret', $settings['mailgun_secret']) }}" placeholder="key-xxxxxxxx" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="password" id="mailgun_secret" name="mailgun_secret" value="{{ old('mailgun_secret', $settings['mailgun_secret']) }}" placeholder="key-xxxxxxxx" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
             </div>
             <div>
                 <label for="mailgun_endpoint" class="block text-sm font-medium text-slate-700">Endpoint</label>
-                <input type="text" id="mailgun_endpoint" name="mailgun_endpoint" value="{{ old('mailgun_endpoint', $settings['mailgun_endpoint']) }}" placeholder="api.eu.mailgun.net" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="text" id="mailgun_endpoint" name="mailgun_endpoint" value="{{ old('mailgun_endpoint', $settings['mailgun_endpoint']) }}" placeholder="api.eu.mailgun.net" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
                 <p class="mt-1 text-xs text-slate-400">Use api.eu.mailgun.net for EU, api.mailgun.net for US</p>
             </div>
             <div>
                 <label for="mail_from_address" class="block text-sm font-medium text-slate-700">From Address</label>
-                <input type="email" id="mail_from_address" name="mail_from_address" value="{{ old('mail_from_address', $settings['mail_from_address']) }}" placeholder="noreply@example.com" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="email" id="mail_from_address" name="mail_from_address" value="{{ old('mail_from_address', $settings['mail_from_address']) }}" placeholder="noreply@example.com" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
             </div>
             <div>
                 <label for="mail_from_name" class="block text-sm font-medium text-slate-700">From Name</label>
-                <input type="text" id="mail_from_name" name="mail_from_name" value="{{ old('mail_from_name', $settings['mail_from_name']) }}" placeholder="Charsley Digital" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="text" id="mail_from_name" name="mail_from_name" value="{{ old('mail_from_name', $settings['mail_from_name']) }}" placeholder="Charsley Digital" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
             </div>
             <div>
                 <label for="leads_to_email" class="block text-sm font-medium text-slate-700">Lead Notifications To</label>
-                <input type="email" id="leads_to_email" name="leads_to_email" value="{{ old('leads_to_email', $settings['leads_to_email']) }}" placeholder="hello@example.com" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="email" id="leads_to_email" name="leads_to_email" value="{{ old('leads_to_email', $settings['leads_to_email']) }}" placeholder="hello@example.com" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
                 <p class="mt-1 text-xs text-slate-400">Email address that receives new lead notifications</p>
             </div>
         </div>
@@ -77,11 +77,11 @@
         <div class="grid gap-4 sm:grid-cols-2">
             <div>
                 <label for="ntfy_url" class="block text-sm font-medium text-slate-700">Server URL</label>
-                <input type="url" id="ntfy_url" name="ntfy_url" value="{{ old('ntfy_url', $settings['ntfy_url']) }}" placeholder="https://ntfy.sh" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="url" id="ntfy_url" name="ntfy_url" value="{{ old('ntfy_url', $settings['ntfy_url']) }}" placeholder="https://ntfy.sh" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
             </div>
             <div>
                 <label for="ntfy_topic" class="block text-sm font-medium text-slate-700">Topic</label>
-                <input type="text" id="ntfy_topic" name="ntfy_topic" value="{{ old('ntfy_topic', $settings['ntfy_topic']) }}" placeholder="my-leads-topic" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="text" id="ntfy_topic" name="ntfy_topic" value="{{ old('ntfy_topic', $settings['ntfy_topic']) }}" placeholder="my-leads-topic" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
                 <p class="mt-1 text-xs text-slate-400">Subscribe to this topic in the Ntfy app to receive alerts</p>
             </div>
         </div>
@@ -100,26 +100,26 @@
         </div>
         <div class="mb-4">
             <label class="flex items-center gap-3">
-                <input type="checkbox" name="turnstile_enabled" value="1" {{ old('turnstile_enabled', $settings['turnstile_enabled']) === '1' ? 'checked' : '' }} class="h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500">
+                <input type="checkbox" name="turnstile_enabled" value="1" {{ old('turnstile_enabled', $settings['turnstile_enabled']) === '1' ? 'checked' : '' }} class="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
                 <span class="text-sm font-medium text-slate-700">Enable Turnstile verification</span>
             </label>
         </div>
         <div class="grid gap-4 sm:grid-cols-2">
             <div>
                 <label for="turnstile_site_key" class="block text-sm font-medium text-slate-700">Site Key</label>
-                <input type="text" id="turnstile_site_key" name="turnstile_site_key" value="{{ old('turnstile_site_key', $settings['turnstile_site_key']) }}" placeholder="0x4AAAAAAA..." class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="text" id="turnstile_site_key" name="turnstile_site_key" value="{{ old('turnstile_site_key', $settings['turnstile_site_key']) }}" placeholder="0x4AAAAAAA..." class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
                 <p class="mt-1 text-xs text-slate-400">Visible key used in the frontend widget</p>
             </div>
             <div>
                 <label for="turnstile_secret" class="block text-sm font-medium text-slate-700">Secret Key</label>
-                <input type="password" id="turnstile_secret" name="turnstile_secret" value="{{ old('turnstile_secret', $settings['turnstile_secret']) }}" placeholder="0x4AAAAAAA..." class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                <input type="password" id="turnstile_secret" name="turnstile_secret" value="{{ old('turnstile_secret', $settings['turnstile_secret']) }}" placeholder="0x4AAAAAAA..." class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
                 <p class="mt-1 text-xs text-slate-400">Server-side key for verifying tokens</p>
             </div>
         </div>
     </div>
 
     <div class="flex items-center gap-4">
-        <button type="submit" class="rounded-lg bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors">
+        <button type="submit" class="rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
             Save Settings
         </button>
         <a href="{{ route('admin.leads.index') }}" class="text-sm text-slate-500 hover:text-slate-700">Back to Leads</a>
