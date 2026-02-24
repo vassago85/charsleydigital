@@ -1,0 +1,14 @@
+.git
+.gitignore
+.gitattributes
+*.md
+apps/site
+apps/platform/node_modules
+apps/platform/vendor
+apps/platform/.env
+apps/platform/storage/logs/*
+apps/platform/storage/framework/cache/*
+apps/platform/storage/framework/sessions/*
+apps/platform/storage/framework/views/*
+apps/platform/tests
+apps/platform/database/database.sqlite

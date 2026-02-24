@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { getEntry } from 'astro:content';
+const page = await getEntry('pages', 'contact');
+if (!page) throw new Error('Contact page not found');
+const { title, description, hero, sections = [], cta } = page.data;
+const introSection = sections.find((s: { type?: string }) => s.type === 'contact_intro');
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero headline={hero.headline} subheadline={hero.subheadline} />
+  <Section>
+    {introSection && introSection.text && (
+      <p class="mb-8 text-lg text-slate-600">{introSection.text}</p>
+    )}
+    <div class="max-w-2xl">
+      <ContactForm />
+    </div>
+    {cta && (
+      <p class="mt-8 text-slate-600">
+        {cta.title} <a href="mailto:hello@charsleydigital.co.za" class="font-medium text-teal-600 hover:underline">{cta.description}</a>
+      </p>
+    )}
+  </Section>
+</BaseLayout>

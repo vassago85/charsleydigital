@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import CTABlock from '../components/CTABlock.astro';
+import { getEntry } from 'astro:content';
+const page = await getEntry('pages', 'services');
+if (!page) throw new Error('Services page not found');
+const { title, description, hero, sections = [], cta } = page.data;
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero headline={hero.headline} subheadline={hero.subheadline} />
+  {sections.map((s: { type?: string; items?: { title: string; description: string }[] }) => {
+    if (s.type === 'service_list' && s.items) {
+      return (
+        <Section>
+          <ul class="space-y-8">
+            {s.items.map((item: { title: string; description: string }) => (
+              <li>
+                <h3 class="text-lg font-semibold text-slate-900">{item.title}</h3>
+                <p class="mt-2 text-slate-600">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      );
+    }
+    return null;
+  })}
+  {cta && <CTABlock title={cta.title} description={cta.description} buttonText={cta.buttonText} />}
+</BaseLayout>

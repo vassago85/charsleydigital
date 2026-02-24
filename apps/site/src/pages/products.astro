@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import CTABlock from '../components/CTABlock.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { getEntry } from 'astro:content';
+const page = await getEntry('pages', 'products');
+if (!page) throw new Error('Products page not found');
+const { title, description, hero, sections = [], cta } = page.data;
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero headline={hero.headline} subheadline={hero.subheadline} />
+  {sections.map((s: { type?: string; items?: { name: string; description: string; image: string }[] }) => {
+    if (s.type === 'product_list' && s.items) {
+      return (
+        <Section>
+          <div class="grid gap-8 md:grid-cols-3">
+            {s.items.map((item: { name: string; description: string; image: string }) => (
+              <ProductCard name={item.name} description={item.description} image={item.image} />
+            ))}
+          </div>
+        </Section>
+      );
+    }
+    return null;
+  })}
+  {cta && <CTABlock title={cta.title} description={cta.description} buttonText={cta.buttonText} />}
+</BaseLayout>

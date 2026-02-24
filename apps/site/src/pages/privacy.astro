@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import { getEntry } from 'astro:content';
+const page = await getEntry('pages', 'privacy');
+if (!page) throw new Error('Privacy page not found');
+const { title, description, hero } = page.data;
+const { Content } = await page.render();
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero headline={hero.headline} subheadline={hero.subheadline} />
+  <Section>
+    <article class="prose prose-slate max-w-none">
+      <Content />
+    </article>
+  </Section>
+</BaseLayout>

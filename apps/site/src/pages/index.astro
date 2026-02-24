@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import CTABlock from '../components/CTABlock.astro';
+import ValuePillar from '../components/ValuePillar.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { getEntry } from 'astro:content';
+const page = await getEntry('pages', 'home');
+if (!page) throw new Error('Home page not found');
+const { title, description, hero, sections = [], cta } = page.data;
+const body = page.body;
+---
+
+<BaseLayout title={title} description={description}>
+  <Hero headline={hero.headline} subheadline={hero.subheadline} />
+  {sections.map((s: { type?: string; items?: unknown[]; title?: string; steps?: { title: string; description: string }[]; points?: string[] }) => {
+    if (s.type === 'value_pillars' && s.items) {
+      return (
+        <Section title="">
+          <div class="grid gap-8 md:grid-cols-3">
+            {s.items.map((item: { title: string; description: string; icon: string }) => (
+              <ValuePillar title={item.title} description={item.description} icon={item.icon} />
+            ))}
+          </div>
+        </Section>
+      );
+    }
+    if (s.type === 'products' && s.items) {
+      return (
+        <Section title={s.title}>
+          <div class="grid gap-8 md:grid-cols-3">
+            {s.items.map((item: { name: string; description: string; slug: string }) => (
+              <ProductCard name={item.name} description={item.description} slug={item.slug} />
+            ))}
+          </div>
+        </Section>
+      );
+    }
+    if (s.type === 'how_it_works' && s.steps) {
+      return (
+        <Section title={s.title}>
+          <ol class="space-y-6">
+            {s.steps.map((step: { title: string; description: string }, i: number) => (
+              <li class="flex gap-4">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-600 font-semibold">{i + 1}</span>
+                <div>
+                  <h3 class="font-semibold text-slate-900">{step.title}</h3>
+                  <p class="text-slate-600">{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Section>
+      );
+    }
+    if (s.type === 'commercial_model' && s.points) {
+      return (
+        <Section title={s.title}>
+          <ul class="list-disc space-y-2 pl-6 text-slate-600">
+            {s.points.map((p: string) => <li>{p}</li>)}
+          </ul>
+        </Section>
+      );
+    }
+    if (s.type === 'data_ownership') {
+      return (
+        <Section title={s.title}>
+          <p class="text-slate-600">{s.description}</p>
+        </Section>
+      );
+    }
+    return null;
+  })}
+  {cta && <CTABlock title={cta.title} description={cta.description} buttonText={cta.buttonText} />}
+</BaseLayout>

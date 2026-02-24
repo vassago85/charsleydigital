@@ -1,0 +1,68 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: charsleydigital-app:latest
+    container_name: charsleydigital-app
+    restart: unless-stopped
+    environment:
+      - APP_NAME=Charsley Digital
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - APP_URL=${APP_URL:-https://charsleydigital.co.za}
+      - APP_KEY=${APP_KEY}
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=${DB_DATABASE:-charsleydigital}
+      - DB_USERNAME=${DB_USERNAME:-charsleydigital}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - SESSION_DRIVER=database
+      - MAIL_MAILER=${MAIL_MAILER:-mailgun}
+      - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS:-noreply@charsleydigital.co.za}
+      - MAIL_FROM_NAME=${MAIL_FROM_NAME:-Charsley Digital}
+      - MAILGUN_DOMAIN=${MAILGUN_DOMAIN:-}
+      - MAILGUN_SECRET=${MAILGUN_SECRET:-}
+      - MAILGUN_ENDPOINT=${MAILGUN_ENDPOINT:-api.eu.mailgun.net}
+      - LEADS_TO_EMAIL=${LEADS_TO_EMAIL:-paul@charsley.co.za}
+      - NTFY_URL=${NTFY_URL:-https://ntfy.sh}
+      - NTFY_TOPIC=${NTFY_TOPIC:-}
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-paul@charsley.co.za}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+    volumes:
+      - app-logs:/var/www/html/storage/logs
+    ports:
+      - "${APP_PORT:-8086}:80"
+    networks:
+      - cd-network
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+    container_name: charsleydigital-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE:-charsleydigital}
+      - MYSQL_USER=${DB_USERNAME:-charsleydigital}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - cd-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  cd-network:
+    driver: bridge
+
+volumes:
+  app-logs:
+  db-data:

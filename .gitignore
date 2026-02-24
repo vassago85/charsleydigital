@@ -1,0 +1,38 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+Homestead.json
+Homestead.yaml
+Thumbs.db
+
+# Platform (Laravel)
+/apps/platform/node_modules
+/apps/platform/vendor
+/apps/platform/public/build
+/apps/platform/public/hot
+/apps/platform/public/storage
+/apps/platform/storage/*.key
+/apps/platform/storage/pail
+/apps/platform/.env
+/apps/platform/npm-debug.log
+/apps/platform/yarn-error.log
+
+# Site (Astro)
+/apps/site/node_modules
+/apps/site/dist
+/apps/site/.astro
+/apps/site/.env
+
+# Database
+*.sqlite
