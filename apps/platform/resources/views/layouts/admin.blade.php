@@ -13,7 +13,10 @@
 <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
     <header class="border-b border-slate-200 bg-white">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-            <a href="{{ route('admin.leads.index') }}" class="font-semibold text-slate-900">Leads Inbox</a>
+            <div class="flex items-center gap-6">
+                <a href="{{ route('admin.leads.index') }}" class="font-semibold text-slate-900 {{ request()->routeIs('admin.leads.*') ? 'text-teal-600' : '' }}">Leads</a>
+                <a href="{{ route('admin.settings') }}" class="text-sm font-medium text-slate-600 hover:text-teal-600 {{ request()->routeIs('admin.settings*') ? 'text-teal-600' : '' }}">Settings</a>
+            </div>
             @auth
                 <form method="POST" action="{{ route('logout') }}" class="inline">
                     @csrf

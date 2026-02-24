@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\NewLeadNotification;
 use App\Models\Lead;
+use App\Models\Setting;
 use App\Services\NtfyService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -44,12 +45,40 @@ class ContactController extends Controller
             'consent' => true,
         ]);
 
-        if ($to = config('mail.leads_to')) {
+        $this->applyMailgunSettings();
+
+        $to = Setting::get('leads_to_email') ?: config('mail.leads_to');
+        if ($to) {
             Mail::to($to)->send(new NewLeadNotification($lead));
         }
 
         $ntfy->notifyNewLead($lead);
 
         return redirect('/#contact')->with('lead_success', true);
+    }
+
+    private function applyMailgunSettings(): void
+    {
+        $domain = Setting::get('mailgun_domain');
+        $secret = Setting::get('mailgun_secret');
+        $endpoint = Setting::get('mailgun_endpoint');
+        $fromAddress = Setting::get('mail_from_address');
+        $fromName = Setting::get('mail_from_name');
+
+        if ($domain) {
+            config(['services.mailgun.domain' => $domain]);
+        }
+        if ($secret) {
+            config(['services.mailgun.secret' => $secret]);
+        }
+        if ($endpoint) {
+            config(['services.mailgun.endpoint' => $endpoint]);
+        }
+        if ($fromAddress) {
+            config(['mail.from.address' => $fromAddress]);
+        }
+        if ($fromName) {
+            config(['mail.from.name' => $fromName]);
+        }
     }
 }

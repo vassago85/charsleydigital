@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Lead;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -14,8 +15,8 @@ class NtfyService
 
     public function __construct()
     {
-        $this->baseUrl = config('services.ntfy.url', 'https://ntfy.sh');
-        $this->topic = config('services.ntfy.topic');
+        $this->baseUrl = Setting::get('ntfy_url') ?: config('services.ntfy.url', 'https://ntfy.sh');
+        $this->topic = Setting::get('ntfy_topic') ?: config('services.ntfy.topic');
     }
 
     public function send(string $title, string $message, int $priority = 3, array $tags = []): bool

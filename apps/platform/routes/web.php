@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +18,14 @@ Route::post('/contact', [ContactController::class, 'submit'])
     ->middleware('throttle:10,1')
     ->name('contact.submit');
 
-Route::middleware('auth')->prefix('admin/leads')->name('admin.leads.')->group(function () {
-    Route::get('/', [LeadController::class, 'index'])->name('index');
-    Route::get('/{lead}', [LeadController::class, 'show'])->name('show');
-    Route::patch('/{lead}', [LeadController::class, 'update'])->name('update');
-    Route::post('/{lead}/notes', [LeadController::class, 'storeNote'])->name('notes.store');
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('leads')->name('leads.')->group(function () {
+        Route::get('/', [LeadController::class, 'index'])->name('index');
+        Route::get('/{lead}', [LeadController::class, 'show'])->name('show');
+        Route::patch('/{lead}', [LeadController::class, 'update'])->name('update');
+        Route::post('/{lead}/notes', [LeadController::class, 'storeNote'])->name('notes.store');
+    });
+
+    Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
+    Route::put('/settings', [SettingsController::class, 'update'])->name('settings.update');
 });
