@@ -25,10 +25,14 @@
     <nav class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
             <a href="/" class="flex items-center gap-2.5">
-                <svg class="h-8 w-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect rx="20" width="100" height="100" fill="#1e53a0"/>
-                    <text x="50" y="68" font-family="'Instrument Sans', system-ui" font-size="48" font-weight="700" fill="white" text-anchor="middle">CD</text>
-                </svg>
+                @if (file_exists(public_path('images/logo.png')))
+                    <img src="/images/logo.png" alt="Charsley Digital" class="h-9 w-auto">
+                @else
+                    <svg class="h-8 w-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect rx="20" width="100" height="100" fill="#1e53a0"/>
+                        <text x="50" y="68" font-family="'Instrument Sans', system-ui" font-size="48" font-weight="700" fill="white" text-anchor="middle">CD</text>
+                    </svg>
+                @endif
                 <span class="text-lg font-bold text-slate-900">Charsley Digital</span>
             </a>
             <div class="hidden items-center gap-8 md:flex">
@@ -337,10 +341,14 @@
             <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
                 <div>
                     <div class="flex items-center gap-2.5">
-                        <svg class="h-6 w-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect rx="20" width="100" height="100" fill="#1e53a0"/>
-                            <text x="50" y="68" font-family="'Instrument Sans', system-ui" font-size="48" font-weight="700" fill="white" text-anchor="middle">CD</text>
-                        </svg>
+                        @if (file_exists(public_path('images/logo.png')))
+                            <img src="/images/logo.png" alt="Charsley Digital" class="h-7 w-auto opacity-60">
+                        @else
+                            <svg class="h-6 w-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect rx="20" width="100" height="100" fill="#1e53a0"/>
+                                <text x="50" y="68" font-family="'Instrument Sans', system-ui" font-size="48" font-weight="700" fill="white" text-anchor="middle">CD</text>
+                            </svg>
+                        @endif
                         <span class="text-sm font-medium text-slate-700">Charsley Digital</span>
                     </div>
                     <p class="mt-2 text-sm text-slate-500">Reliable web applications &amp; hosting. No hype &mdash; just solid builds.</p>
