@@ -5,22 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Charsley Digital') }} — Reliable Web Applications & Hosting</title>
     <meta name="description" content="Reliable web applications, hosting, and maintenance. Built for growth, hosted responsibly. No hype — just solid builds.">
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            brand: { 50:'#eff5ff',100:'#dae6ff',200:'#bdd4ff',300:'#90b8ff',400:'#5b91fc',500:'#3570e2',600:'#2f6cb5',700:'#1e53a0',800:'#1e4784',900:'#1e3f6e',950:'#142849' }
-                        }
-                    }
-                }
-            }
-        </script>
-    @endif
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         html { scroll-behavior: smooth; }
     </style>
