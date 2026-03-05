@@ -106,12 +106,6 @@
                     </div>
                     <h3 class="mt-5 text-lg font-semibold text-slate-900">Membership &amp; Admin Portals</h3>
                     <p class="mt-2 text-slate-600">Member management, roles, certificates, and compliance &mdash; all in one place.</p>
-                    <p class="mt-4 text-sm text-brand-600 font-medium">See it in action: NRAPA Portal</p>
-                    <div class="mt-3 flex flex-wrap gap-1.5">
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">Laravel</span>
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">Livewire</span>
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">MySQL</span>
-                    </div>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
                     <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600 text-white">
@@ -119,12 +113,6 @@
                     </div>
                     <h3 class="mt-5 text-lg font-semibold text-slate-900">Dashboards &amp; Event Tools</h3>
                     <p class="mt-2 text-slate-600">Admin dashboards, scheduling, scoring, and automated notifications for streamlined operations.</p>
-                    <p class="mt-4 text-sm text-brand-600 font-medium">See it in action: MatchBookPro</p>
-                    <div class="mt-3 flex flex-wrap gap-1.5">
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">Laravel</span>
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">Tailwind</span>
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">Alpine.js</span>
-                    </div>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
                     <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600 text-white">
@@ -132,11 +120,6 @@
                     </div>
                     <h3 class="mt-5 text-lg font-semibold text-slate-900">Custom Web Applications</h3>
                     <p class="mt-2 text-slate-600">Bespoke solutions for your unique workflows. Containerized, portable, and fully yours.</p>
-                    <div class="mt-4 flex flex-wrap gap-1.5">
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">Bespoke</span>
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">Docker</span>
-                        <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">Dedicated</span>
-                    </div>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
                     <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600 text-white">
@@ -231,9 +214,9 @@
             </div>
             <div class="mt-14 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm md:p-10">
                 <h3 class="text-xl font-bold text-slate-900">Data Ownership &amp; Control</h3>
-                <p class="mt-4 text-lg text-slate-600">You own and control your data. We host it in dedicated space you pay for &mdash; if you ever want to leave, your data and code go with you. That's how it should be.</p>
+                <p class="mt-4 text-lg text-slate-600">Your data belongs to you. We host it in dedicated space you pay for &mdash; and you can request a full export at any time, no questions asked.</p>
                 <div class="mt-6 rounded-xl bg-brand-50 p-5">
-                    <p class="text-sm font-semibold text-brand-800">No vendor lock-in. Your code. Your data. Always.</p>
+                    <p class="text-sm font-semibold text-brand-800">No lock-in. Your data. Always accessible.</p>
                 </div>
             </div>
         </div>
