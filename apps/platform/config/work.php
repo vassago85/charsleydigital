@@ -139,10 +139,10 @@ return [
             'index' => '06',
             'name' => 'Ranyati',
             'client' => 'Ranyati Firearm Motivations',
-            'kicker' => 'Brand structure',
+            'kicker' => 'Brand site',
             'summary' => 'Three businesses, one brand: membership, motivations, and secure storage.',
-            'status' => 'Concept',
-            'role' => 'Brand and landing pages',
+            'status' => 'Live',
+            'role' => 'Design and build',
             'stack' => ['Static HTML', 'Tailwind'],
             'links' => [
                 ['label' => 'Ranyati overview', 'href' => '/ranyati/'],
@@ -153,7 +153,7 @@ return [
             'story' => [
                 [
                     'heading' => 'The job',
-                    'body' => 'Ranyati needed the brand to read as one company with three clear businesses: SAPS-accredited membership, firearm licence motivations, and secure storage. The pages had to present that structure before the products behind them were public.',
+                    'body' => 'Ranyati is one company with three businesses: SAPS-accredited membership, firearm licence motivations, and secure storage. The site has to make that structure obvious at a glance.',
                 ],
                 [
                     'heading' => 'What it does',
@@ -161,7 +161,7 @@ return [
                 ],
                 [
                     'heading' => 'Where to look',
-                    'body' => 'The pages are live on this domain under /ranyati. They are the presentation of the brand, not the membership system itself. That system is NRAPA.',
+                    'body' => 'The site is live on this domain at /ranyati: an overview, then a page each for membership, storage, and motivations. The membership system behind the brand is NRAPA.',
                 ],
             ],
         ],
