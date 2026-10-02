@@ -119,6 +119,6 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
-    'leads_to' => env('LEADS_TO_EMAIL'),
+    'leads_to' => env('LEADS_TO_EMAIL', 'paul@charsley.co.za'),
 
 ];

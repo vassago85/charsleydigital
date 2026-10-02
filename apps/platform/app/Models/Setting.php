@@ -17,6 +17,11 @@ class Setting extends Model
 
     private static array $cache = [];
 
+    public static function flush(): void
+    {
+        self::$cache = [];
+    }
+
     public static function get(string $key, mixed $default = null): mixed
     {
         if (isset(self::$cache[$key])) {

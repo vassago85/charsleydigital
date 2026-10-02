@@ -1,254 +1,230 @@
 @extends('layouts.site')
 
-@section('title', 'Charsley Digital — Platforms that stay owned')
-@section('description', 'Membership platforms, match scoring, and site traffic systems. Built, hosted, and maintained. Your data stays yours.')
-@section('canonical', route('home'))
+@section('body_class', 'cd-home')
 
-@push('head')
-    @include('partials.work-graph')
-    <script type="application/ld+json">
-        {!! json_encode([
-            '@@context' => 'https://schema.org',
-            '@type' => 'Organization',
-            'name' => 'Charsley Digital',
-            'url' => 'https://charsleydigital.co.za',
-            'description' => 'Membership platforms, match scoring, and site traffic systems. Built, hosted, and maintained.',
-        ], JSON_UNESCAPED_SLASHES) !!}
-    </script>
-@endpush
+@section('title', 'Charsley Digital — Systems built to be owned')
+@section('description', 'Custom software for organisations that need to own their systems. Dedicated infrastructure, direct support, no lock-in.')
+@section('canonical', url('/'))
 
 @section('content')
-    <section class="ink text-white">
-        <div class="mx-auto max-w-6xl px-6 pb-8 pt-16 md:pt-24">
-            <p class="rise font-mono text-xs uppercase tracking-[0.22em] text-brand-300">Charsley Digital</p>
-            <h1 class="rise rise-d1 mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
-                Systems built<br>to be owned.
-            </h1>
-            <p class="rise rise-d2 mt-8 max-w-xl text-lg text-slate-300 md:text-xl">
-                Membership platforms, match scoring, and site traffic. Designed, built, and hosted on dedicated infrastructure. You keep the data.
-            </p>
-        </div>
+@php
+    $by = collect($projects)->keyBy('slug');
+    $featured = ['saprf', 'centrevision', 'deadcenter'];
+    $more = ['nrapa', 'pprc', 'ranyati', 'axionis-pos'];
+@endphp
 
-        <div class="rise rise-d3 mx-auto mt-12 max-w-6xl border-t border-white/10">
-            @foreach ($projects as $project)
-                <div class="grid gap-3 border-b border-white/10 px-6 py-5 transition-colors hover:bg-white/5 md:grid-cols-12 md:items-center md:gap-6">
-                    <a href="{{ route('work.show', $project['slug']) }}" class="grid gap-3 md:col-span-9 md:grid-cols-9 md:items-center md:gap-6">
-                        <span class="flex items-center gap-3 md:col-span-4">
-                            @if ($project['logo'])
-                                <img src="{{ $project['logo'] }}" alt="{{ $project['name'] }} logo" class="h-10 w-10 shrink-0 bg-white object-contain p-1" width="40" height="40">
-                            @else
-                                <span class="flex h-10 w-10 shrink-0 items-center justify-center bg-white text-xs font-bold text-[#0b1220]">{{ $project['index'] }}</span>
-                            @endif
-                            <span>
-                                <span class="block font-mono text-[10px] uppercase tracking-wider text-brand-300">{{ $project['index'] }}</span>
-                                <span class="block text-lg font-semibold tracking-tight">{{ $project['name'] }}</span>
-                            </span>
-                        </span>
-                        <span class="text-sm text-slate-400 md:col-span-5">{{ $project['summary'] }}</span>
-                    </a>
-                    <div class="md:col-span-3 md:text-right">
-                        @if ($project['url'])
-                            <a href="{{ $project['url'] }}" class="text-sm font-medium text-white underline decoration-white/30 underline-offset-4 hover:decoration-white" rel="noopener noreferrer">{{ parse_url($project['url'], PHP_URL_HOST) }}</a>
-                        @else
-                            <span class="font-mono text-xs uppercase tracking-wider text-slate-500">{{ $project['status'] }}</span>
+<div class="wrap hero">
+    <div>
+        <p class="label">Charsley Digital / software studio</p>
+        <h1>Systems built<br>to be owned<span class="dot">.</span></h1>
+        <p class="lead">Custom software for organisations that need to own their systems.</p>
+        <p class="bodycopy">Dedicated infrastructure, direct support, and no platform lock-in. The software is built around how the organisation actually operates.</p>
+        <div class="actions">
+            <a class="button" href="#contact">Start a project</a>
+            <a href="#work">View selected work</a>
+        </div>
+    </div>
+    <aside class="index" aria-label="Selected systems">
+        <div class="index-head"><span class="label">System index</span><span class="label">07</span></div>
+        @foreach (['nrapa' => 'NRAPA', 'saprf' => 'SAPRF', 'pprc' => 'PPRC', 'deadcenter' => 'DeadCenter', 'centrevision' => 'CentreVision', 'ranyati' => 'Ranyati', 'axionis-pos' => 'Axionis POS'] as $slug => $label)
+            <a href="#{{ $slug }}">
+                <span>{{ $by[$slug]['index'] ?? '' }}</span>
+                <strong>{{ $label }}</strong>
+                <small>Live</small>
+            </a>
+        @endforeach
+    </aside>
+</div>
+<div class="wrap hero-foot mono"><span>Selected work, 2024–2026</span><span>Dedicated infrastructure</span></div>
+
+<section class="work" id="work">
+    <div class="wrap">
+        <div class="section-top"><p class="label">Selected work</p><p class="label">Live systems</p></div>
+        @foreach ($featured as $slug)
+            @php $project = $by[$slug]; @endphp
+            <article class="project" id="{{ $slug }}">
+                <span class="number mono">{{ $project['index'] }}</span>
+                <div class="project-copy">
+                    <h3>{{ $project['name'] }}</h3>
+                    <p>{{ $project['summary'] }}</p>
+                    <span class="label">{{ $project['role'] }}@if (! empty($project['stack'])) / {{ implode(', ', $project['stack']) }}@endif</span>
+                    @if ($project['url'])
+                        <a href="{{ $project['url'] }}" rel="noopener">Visit platform</a>
+                    @endif
+                </div>
+                <div class="plate {{ $slug === 'centrevision' ? 'traffic' : ($slug === 'deadcenter' ? 'score' : '') }}">
+                    <div class="word">{{ $project['name'] }}</div>
+                    <div class="plate-footer">
+                        <div>
+                            <div class="spec"><span>{{ $project['status'] }}</span><span>{{ parse_url($project['url'], PHP_URL_HOST) }}</span></div>
+                            <div class="caption">{{ $project['client'] }}</div>
+                        </div>
+                        @if ($project['logo'])
+                            <img src="{{ $project['logo'] }}" alt="">
                         @endif
                     </div>
                 </div>
+            </article>
+        @endforeach
+        <div class="more">
+            @foreach ($more as $slug)
+                @php $project = $by[$slug]; @endphp
+                <a id="{{ $slug }}" href="{{ $project['url'] ?: route('work.show', $slug) }}" @if($project['url']) rel="noopener" @endif>
+                    <span class="mono">{{ $project['index'] }}</span>
+                    @if ($project['logo'])
+                        <img src="{{ $project['logo'] }}" alt="">
+                    @else
+                        <span></span>
+                    @endif
+                    <strong>{{ $project['name'] }}</strong>
+                    <span class="desc">{{ $project['client'] }}</span>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
             @endforeach
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="practice" class="bg-white py-24">
-        <div class="mx-auto grid max-w-6xl gap-16 px-6 md:grid-cols-12">
-            <div class="md:col-span-4">
-                <p class="font-mono text-xs uppercase tracking-[0.2em] text-brand-700">Practice</p>
-                <h2 class="mt-4 text-4xl font-semibold tracking-tight">What actually gets built.</h2>
-            </div>
-            <div class="md:col-span-7 md:col-start-6">
-                <div class="border-t border-slate-200 py-6">
-                    <h3 class="text-xl font-semibold">Membership and federation platforms</h3>
-                    <p class="mt-2 text-slate-600">Applications, renewals, certificates, QR checks, and the admin that issues them. NRAPA, SAPRF, and PPRC are this work.</p>
-                </div>
-                <div class="border-t border-slate-200 py-6">
-                    <h3 class="text-xl font-semibold">Match scoring</h3>
-                    <p class="mt-2 text-slate-600">Seasons, squadding, standings, and a public results portal. DeadCenter also ships an Android app for the range, when the network is the weak part of the day.</p>
-                </div>
-                <div class="border-t border-slate-200 py-6">
-                    <h3 class="text-xl font-semibold">Site traffic</h3>
-                    <p class="mt-2 text-slate-600">Camera reads, watchlists, dwell, and reports. CentreVision labels and alerts. It does not open gates.</p>
-                </div>
-                <div class="border-t border-slate-200 py-6">
-                    <h3 class="text-xl font-semibold">Point of sale</h3>
-                    <p class="mt-2 text-slate-600">The sale at the counter, kept in a system the business owns. That is Axionis POS.</p>
-                </div>
-                <div class="border-y border-slate-200 py-6">
-                    <h3 class="text-xl font-semibold">Hosting you can leave</h3>
-                    <p class="mt-2 text-slate-600">Each platform runs in its own containers. You pay for that space. You can ask for a full export. There is no lock-in hiding in the contract.</p>
-                </div>
-            </div>
+<section id="practice">
+    <div class="wrap practice">
+        <div class="practice-head">
+            <p class="label">Practice</p>
+            <h2>Software shaped around the operation.</h2>
         </div>
-    </section>
-
-    <section id="how-it-works" class="border-t border-slate-200 bg-slate-50 py-24">
-        <div class="mx-auto max-w-6xl px-6">
-            <p class="font-mono text-xs uppercase tracking-[0.2em] text-brand-700">How it starts</p>
-            <h2 class="mt-4 max-w-xl text-4xl font-semibold tracking-tight">No price before the scope.</h2>
-            <ol class="mt-14 grid gap-10 md:grid-cols-4">
-                <li>
-                    <p class="font-mono text-sm text-brand-700">01</p>
-                    <h3 class="mt-3 text-lg font-semibold">Discovery</h3>
-                    <p class="mt-2 text-sm text-slate-600">What the organisation actually does, and where the current process breaks.</p>
-                </li>
-                <li>
-                    <p class="font-mono text-sm text-brand-700">02</p>
-                    <h3 class="mt-3 text-lg font-semibold">Proposal</h3>
-                    <p class="mt-2 text-sm text-slate-600">A written scope. Implementation, a usage fee, and hosting called out separately.</p>
-                </li>
-                <li>
-                    <p class="font-mono text-sm text-brand-700">03</p>
-                    <h3 class="mt-3 text-lg font-semibold">Build</h3>
-                    <p class="mt-2 text-sm text-slate-600">You see it while it is being made. The queue and the scheduler ship with the site.</p>
-                </li>
-                <li>
-                    <p class="font-mono text-sm text-brand-700">04</p>
-                    <h3 class="mt-3 text-lg font-semibold">Keep</h3>
-                    <p class="mt-2 text-sm text-slate-600">Hosting, updates, and later work quoted before it is billed. We stay on the system.</p>
-                </li>
-            </ol>
+        <div class="services">
+            <article><span class="mono">01</span><div><h3>Membership platforms</h3><p>Member records, renewals, documents, roles, and the admin work around a real association.</p></div></article>
+            <article><span class="mono">02</span><div><h3>Match and event systems</h3><p>Entries, scoring, results, and the public record of a competition.</p></div></article>
+            <article><span class="mono">03</span><div><h3>Site traffic systems</h3><p>Vehicle reads, watchlists, dwell, and reports. The system records and reports. It does not control gates.</p></div></article>
+            <article><span class="mono">04</span><div><h3>Point of sale</h3><p>Sales, stock, and the counter workflow for a business that needs the software on its own infrastructure.</p></div></article>
+            <article><span class="mono">05</span><div><h3>Operational reporting</h3><p>The numbers the organisation actually uses, in a form the people running it can read.</p></div></article>
+            <article><span class="mono">06</span><div><h3>Dedicated hosting</h3><p>The system runs on infrastructure set aside for that client, with the data kept separate.</p></div></article>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="bg-[#0b1220] py-24 text-white">
-        <div class="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-12">
-            <div class="md:col-span-5">
-                <p class="font-mono text-xs uppercase tracking-[0.2em] text-brand-300">Commercial</p>
-                <h2 class="mt-4 text-4xl font-semibold tracking-tight">Four lines. No surprise invoice.</h2>
-            </div>
-            <dl class="md:col-span-6 md:col-start-7">
-                <div class="border-t border-white/15 py-5">
-                    <dt class="font-semibold">Once-off implementation</dt>
-                    <dd class="mt-1 text-sm text-slate-400">Scoped to what gets built. Some agreements trade the upfront fee for a longer term.</dd>
-                </div>
-                <div class="border-t border-white/15 py-5">
-                    <dt class="font-semibold">Usage fee</dt>
-                    <dd class="mt-1 text-sm text-slate-400">Monthly, in arrears, tied to real use. It moves when the organisation moves.</dd>
-                </div>
-                <div class="border-t border-white/15 py-5">
-                    <dt class="font-semibold">Hosting and maintenance</dt>
-                    <dd class="mt-1 text-sm text-slate-400">The small monthly line that keeps the platform patched and up.</dd>
-                </div>
-                <div class="border-y border-white/15 py-5">
-                    <dt class="font-semibold">Later enhancements</dt>
-                    <dd class="mt-1 text-sm text-slate-400">Quoted and approved before anyone starts. Not folded into last month’s invoice.</dd>
-                </div>
-            </dl>
+<section class="dark" id="ownership">
+    <div class="wrap">
+        <div class="ownership">
+            <div><p class="label">Ownership</p><h2>The client owns the system.</h2></div>
+            <p>Data, access, and the right to leave stay with the organisation. The software is not rented from a shared product that can change underneath the operation.</p>
         </div>
-    </section>
-
-    <section id="about" class="bg-white py-24">
-        <div class="mx-auto max-w-6xl px-6">
-            <p class="font-mono text-xs uppercase tracking-[0.2em] text-brand-700">Ownership</p>
-            <h2 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">Your data is not the product.</h2>
-            <p class="mt-6 max-w-2xl text-lg text-slate-600">We host it in dedicated space you pay for. You can request a full export. Leaving does not mean negotiating your own records back.</p>
+        <div class="principles">
+            <div><strong>Your data</strong><p>Records stay with the organisation that created them.</p></div>
+            <div><strong>Your infrastructure</strong><p>Each system runs on dedicated infrastructure, not a shared tenancy.</p></div>
+            <div><strong>No lock-in</strong><p>You can take the system and the data if the working relationship ends.</p></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact" class="border-t border-slate-200 bg-slate-50 py-24">
-        <div class="mx-auto max-w-3xl px-6">
-            <p class="font-mono text-xs uppercase tracking-[0.2em] text-brand-700">Contact</p>
-            <h2 class="mt-4 text-4xl font-semibold tracking-tight">Tell us what is broken.</h2>
-            <p class="mt-4 text-lg text-slate-600">We reply within one business day. Pricing comes after we understand the work.</p>
+<section id="process">
+    <div class="wrap">
+        <div class="section-top"><p class="label">Process</p><p class="label">Four stages</p></div>
+        <div class="steps">
+            <article><span class="mono">01</span><h3>Discovery</h3><p>How the organisation works now, and where the current tools fail.</p></article>
+            <article><span class="mono">02</span><h3>Scope</h3><p>What gets built, what stays out, and what it costs to run.</p></article>
+            <article><span class="mono">03</span><h3>Build</h3><p>The system, on infrastructure that belongs to the engagement.</p></article>
+            <article><span class="mono">04</span><h3>Operate</h3><p>Hosting, fixes, and changes after the system is in use.</p></article>
+        </div>
+    </div>
+</section>
 
+<section class="commercial" id="commercial">
+    <div class="wrap commercial-inner">
+        <div><p class="label">Commercial</p><h2>Clear costs. No lock-in.</h2></div>
+        <div>
+            <div class="cost"><span class="mono">01</span><div><h3>Build</h3><p>Scoped and quoted before work starts.</p></div></div>
+            <div class="cost"><span class="mono">02</span><div><h3>Hosting</h3><p>A monthly cost for the dedicated infrastructure.</p></div></div>
+            <div class="cost"><span class="mono">03</span><div><h3>Support</h3><p>A retainer for fixes and small changes, or quoted work when the change is larger.</p></div></div>
+            <div class="cost"><span class="mono">04</span><div><h3>Exit</h3><p>The data and the system can leave with the client.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="wrap contact">
+        <div>
+            <p class="label">Start a project</p>
+            <h2>Tell me what the system needs to do.</h2>
+            <p>A short note is enough. I reply with whether it is a fit, and what the first step would be.</p>
+        </div>
+        <div>
             @if (session('lead_success'))
-                <div class="mt-10 border border-brand-200 bg-brand-50 p-8">
-                    <h3 class="text-lg font-semibold text-brand-900">Received.</h3>
-                    <p class="mt-2 text-brand-800">The enquiry is in. Expect a reply within one business day.</p>
+                <div class="ok" role="status">
+                    <p class="label">Received</p>
+                    <h3>Got it.</h3>
+                    <p>I will reply from the studio address.</p>
                 </div>
             @else
-                <form method="POST" action="{{ route('contact.submit') }}" class="mt-10 space-y-6">
+                <form method="POST" action="{{ route('contact.submit') }}">
                     @csrf
-                    <input type="hidden" name="timestamp" value="">
-                    <input type="text" name="website_url" class="hidden" tabindex="-1" autocomplete="off">
-
-                    @if ($errors->any())
-                        <div class="border border-red-200 bg-red-50 p-4">
-                            <ul class="list-inside list-disc text-sm text-red-700">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
+                    <div class="hp" aria-hidden="true">
+                        <label for="website_url">Website</label>
+                        <input id="website_url" name="website_url" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+                    <input type="hidden" name="timestamp" value="{{ time() }}">
+                    <div class="form-row">
+                        <div>
+                            <label for="org_name">Organisation</label>
+                            <input id="org_name" name="org_name" type="text" value="{{ old('org_name') }}" required autocomplete="organization">
+                        </div>
+                        <div>
+                            <label for="contact_name">Your name</label>
+                            <input id="contact_name" name="contact_name" type="text" value="{{ old('contact_name') }}" required autocomplete="name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" value="{{ old('email') }}" required autocomplete="email">
+                        </div>
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="phone" type="tel" value="{{ old('phone') }}" autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div>
+                            <label for="system_type">System type</label>
+                            <select id="system_type" name="system_type" required>
+                                <option value="" @selected(old('system_type') === null || old('system_type') === '')>Select</option>
+                                @foreach (['Membership', 'Match scoring', 'Site traffic', 'Point of sale', 'Something else'] as $type)
+                                    <option value="{{ $type }}" @selected(old('system_type') === $type)>{{ $type }}</option>
                                 @endforeach
-                            </ul>
+                            </select>
                         </div>
+                        <div>
+                            <label for="timeline">Timeline</label>
+                            <input id="timeline" name="timeline" type="text" value="{{ old('timeline') }}">
+                        </div>
+                    </div>
+                    <label for="problem_description">What the system needs to do</label>
+                    <textarea id="problem_description" name="problem_description" required>{{ old('problem_description') }}</textarea>
+                    <div class="check">
+                        <input id="consent" name="consent" type="checkbox" value="1" @checked(old('consent')) required>
+                        <label for="consent">I agree to being contacted about this enquiry.</label>
+                    </div>
+                    @if ($errors->any())
+                        <p class="form-note" role="alert">{{ $errors->first() }}</p>
                     @endif
-
-                    <div class="grid gap-6 sm:grid-cols-2">
-                        <div>
-                            <label for="org_name" class="block text-sm font-medium text-slate-700">Organisation <span class="text-red-500">*</span></label>
-                            <input type="text" id="org_name" name="org_name" required value="{{ old('org_name') }}" autocomplete="organization" class="mt-1 block w-full border border-slate-300 bg-white px-4 py-3 text-slate-900 focus-visible:border-brand-700 focus-visible:outline-none">
-                        </div>
-                        <div>
-                            <label for="contact_name" class="block text-sm font-medium text-slate-700">Your name <span class="text-red-500">*</span></label>
-                            <input type="text" id="contact_name" name="contact_name" required value="{{ old('contact_name') }}" autocomplete="name" class="mt-1 block w-full border border-slate-300 bg-white px-4 py-3 text-slate-900 focus-visible:border-brand-700 focus-visible:outline-none">
-                        </div>
-                    </div>
-
-                    <div class="grid gap-6 sm:grid-cols-2">
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-slate-700">Email <span class="text-red-500">*</span></label>
-                            <input type="email" id="email" name="email" required value="{{ old('email') }}" autocomplete="email" class="mt-1 block w-full border border-slate-300 bg-white px-4 py-3 text-slate-900 focus-visible:border-brand-700 focus-visible:outline-none">
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-slate-700">Phone</label>
-                            <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" autocomplete="tel" class="mt-1 block w-full border border-slate-300 bg-white px-4 py-3 text-slate-900 focus-visible:border-brand-700 focus-visible:outline-none">
-                        </div>
-                    </div>
-
-                    <div class="grid gap-6 sm:grid-cols-2">
-                        <div>
-                            <label for="system_type" class="block text-sm font-medium text-slate-700">What do you need? <span class="text-red-500">*</span></label>
-                            <select id="system_type" name="system_type" required class="mt-1 block w-full border border-slate-300 bg-white px-4 py-3 text-slate-900 focus-visible:border-brand-700 focus-visible:outline-none">
-                                <option value="">Select one...</option>
-                                <option value="Membership portal" @selected(old('system_type') === 'Membership portal')>Membership portal</option>
-                                <option value="Admin/operations app" @selected(old('system_type') === 'Admin/operations app')>Admin / operations</option>
-                                <option value="Custom web application" @selected(old('system_type') === 'Custom web application')>Custom web application</option>
-                                <option value="Website" @selected(old('system_type') === 'Website')>Website</option>
-                                <option value="Hosting & maintenance" @selected(old('system_type') === 'Hosting & maintenance')>Hosting and maintenance</option>
-                                <option value="Not sure yet" @selected(old('system_type') === 'Not sure yet')>Not sure yet</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="timeline" class="block text-sm font-medium text-slate-700">Timeline <span class="text-red-500">*</span></label>
-                            <select id="timeline" name="timeline" required class="mt-1 block w-full border border-slate-300 bg-white px-4 py-3 text-slate-900 focus-visible:border-brand-700 focus-visible:outline-none">
-                                <option value="">Select one...</option>
-                                <option value="ASAP" @selected(old('timeline') === 'ASAP')>ASAP</option>
-                                <option value="1-3 months" @selected(old('timeline') === '1-3 months')>1–3 months</option>
-                                <option value="3-6 months" @selected(old('timeline') === '3-6 months')>3–6 months</option>
-                                <option value="Just exploring" @selected(old('timeline') === 'Just exploring')>Just exploring</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="problem_description" class="block text-sm font-medium text-slate-700">The project <span class="text-red-500">*</span></label>
-                        <textarea id="problem_description" name="problem_description" required rows="5" class="mt-1 block w-full border border-slate-300 bg-white px-4 py-3 text-slate-900 focus-visible:border-brand-700 focus-visible:outline-none">{{ old('problem_description') }}</textarea>
-                    </div>
-
-                    <div class="flex items-start gap-3">
-                        <input type="checkbox" id="consent" name="consent" value="1" required class="mt-1 h-4 w-4 border-slate-300 text-brand-700" @checked(old('consent'))>
-                        <label for="consent" class="text-sm text-slate-600">I consent to Charsley Digital storing this information to respond to my enquiry. <span class="text-red-500">*</span></label>
-                    </div>
-
-                    <button type="submit" class="w-full bg-[#0b1220] px-6 py-4 text-base font-semibold text-white hover:bg-brand-800">Send enquiry</button>
+                    <button class="button" type="submit" style="margin-top:22px">Send enquiry</button>
+                    <p class="form-note">Sent to the studio. No newsletter.</p>
                 </form>
             @endif
         </div>
-    </section>
-@endsection
+    </div>
+</section>
 
-@push('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var ts = document.querySelector('input[name="timestamp"]');
-            if (ts) ts.value = Date.now();
-        });
-    </script>
+@push('head')
+<script type="application/ld+json">
+{!! json_encode([
+    '@@context' => 'https://schema.org',
+    '@type' => 'ProfessionalService',
+    'name' => 'Charsley Digital',
+    'url' => url('/'),
+    'description' => 'Custom software for organisations that need to own their systems.',
+    'areaServed' => 'ZA',
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+@include('partials.work-graph')
 @endpush
+@endsection

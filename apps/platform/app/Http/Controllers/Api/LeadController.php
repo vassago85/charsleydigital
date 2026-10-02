@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\LeadRecipients;
 use App\Mail\NewLeadNotification;
 use App\Models\Lead;
 use App\Models\Setting;
@@ -72,10 +73,7 @@ class LeadController extends Controller
 
         $this->applyMailgunSettings();
 
-        $to = Setting::get('leads_to_email') ?: config('mail.leads_to');
-        if ($to) {
-            Mail::to($to)->send(new NewLeadNotification($lead));
-        }
+        Mail::to(LeadRecipients::all())->send(new NewLeadNotification($lead));
 
         $ntfy->notifyNewLead($lead);
 

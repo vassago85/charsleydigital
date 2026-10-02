@@ -57,8 +57,8 @@
             </div>
             <div>
                 <label for="leads_to_email" class="block text-sm font-medium text-slate-700">Lead Notifications To</label>
-                <input type="email" id="leads_to_email" name="leads_to_email" value="{{ old('leads_to_email', $settings['leads_to_email']) }}" placeholder="hello@example.com" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                <p class="mt-1 text-xs text-slate-400">Email address that receives new lead notifications</p>
+                <input type="email" id="leads_to_email" name="leads_to_email" value="{{ old('leads_to_email', $settings['leads_to_email']) }}" placeholder="paul@charsley.co.za" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                <p class="mt-1 text-xs text-slate-400">paul@charsley.co.za always receives new lead notifications. Another address here is copied as well.</p>
             </div>
         </div>
     </div>
