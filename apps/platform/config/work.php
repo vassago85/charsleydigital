@@ -166,8 +166,34 @@ return [
             ],
         ],
         [
-            'slug' => 'charsley-digital',
+            'slug' => 'axionis-pos',
             'index' => '07',
+            'name' => 'Axionis POS',
+            'client' => 'Axionis',
+            'kicker' => 'Point of sale',
+            'summary' => 'The till. The sale happens at the counter and the record stays with the business.',
+            'status' => 'Live',
+            'role' => 'Design, build, and host',
+            'stack' => [],
+            'links' => [],
+            'story' => [
+                [
+                    'heading' => 'The job',
+                    'body' => 'Axionis needed a point of sale that belongs to the business. The sale happens at the counter. The record should not live inside a till rental that the business cannot leave.',
+                ],
+                [
+                    'heading' => 'What it does',
+                    'body' => 'Axionis POS takes the sale and keeps the trading record. It is the counter system, built for that business rather than a generic package with their logo on it.',
+                ],
+                [
+                    'heading' => 'How it runs',
+                    'body' => 'It is hosted with the other platforms, in its own containers on dedicated hardware. The business keeps the data.',
+                ],
+            ],
+        ],
+        [
+            'slug' => 'charsley-digital',
+            'index' => '08',
             'name' => 'Charsley Digital',
             'client' => 'This site',
             'kicker' => 'This platform',

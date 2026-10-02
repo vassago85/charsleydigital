@@ -20,10 +20,12 @@
                     <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Role</dt>
                     <dd class="mt-2 text-sm text-white">{{ $project['role'] }}</dd>
                 </div>
-                <div>
-                    <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Stack</dt>
-                    <dd class="mt-2 text-sm text-white">{{ implode(' · ', $project['stack']) }}</dd>
-                </div>
+                @if (count($project['stack']))
+                    <div>
+                        <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Stack</dt>
+                        <dd class="mt-2 text-sm text-white">{{ implode(' · ', $project['stack']) }}</dd>
+                    </div>
+                @endif
             </dl>
         </div>
     </section>

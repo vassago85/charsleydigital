@@ -59,6 +59,10 @@
                     <h3 class="text-xl font-semibold">Site traffic</h3>
                     <p class="mt-2 text-slate-600">Camera reads, watchlists, dwell, and reports. CentreVision labels and alerts. It does not open gates.</p>
                 </div>
+                <div class="border-t border-slate-200 py-6">
+                    <h3 class="text-xl font-semibold">Point of sale</h3>
+                    <p class="mt-2 text-slate-600">The sale at the counter, kept in a system the business owns. That is Axionis POS.</p>
+                </div>
                 <div class="border-y border-slate-200 py-6">
                     <h3 class="text-xl font-semibold">Hosting you can leave</h3>
                     <p class="mt-2 text-slate-600">Each platform runs in its own containers. You pay for that space. You can ask for a full export. There is no lock-in hiding in the contract.</p>
