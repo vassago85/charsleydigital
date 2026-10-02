@@ -4,6 +4,8 @@ return [
     'projects' => [
         [
             'slug' => 'nrapa',
+            'logo' => '/images/brands/nrapa.png',
+            'url' => 'https://nrapa.ranyati.co.za',
             'index' => '01',
             'name' => 'NRAPA',
             'client' => 'National Rifle and Pistol Association',
@@ -12,7 +14,9 @@ return [
             'status' => 'Live',
             'role' => 'Design, build, and host',
             'stack' => ['Laravel', 'Livewire', 'MySQL', 'Redis', 'Mailgun'],
-            'links' => [],
+            'links' => [
+                ['label' => 'nrapa.ranyati.co.za', 'href' => 'https://nrapa.ranyati.co.za'],
+            ],
             'story' => [
                 [
                     'heading' => 'The job',
@@ -30,6 +34,8 @@ return [
         ],
         [
             'slug' => 'saprf',
+            'logo' => '/images/brands/saprf.png',
+            'url' => 'https://saprf.co.za',
             'index' => '02',
             'name' => 'SAPRF',
             'client' => 'South African Precision Rifle Federation',
@@ -38,7 +44,9 @@ return [
             'status' => 'Live',
             'role' => 'Design, build, and host',
             'stack' => ['Laravel', 'Livewire', 'MariaDB', 'Redis', 'Mailgun'],
-            'links' => [],
+            'links' => [
+                ['label' => 'saprf.co.za', 'href' => 'https://saprf.co.za'],
+            ],
             'story' => [
                 [
                     'heading' => 'The job',
@@ -56,6 +64,8 @@ return [
         ],
         [
             'slug' => 'pprc',
+            'logo' => '/images/brands/pprc.png',
+            'url' => 'https://pretoriaprc.co.za',
             'index' => '03',
             'name' => 'PPRC',
             'client' => 'Pretoria Rifle & Pistol Club',
@@ -84,6 +94,8 @@ return [
         ],
         [
             'slug' => 'deadcenter',
+            'logo' => '/images/brands/deadcenter.png',
+            'url' => 'https://deadcenter.co.za',
             'index' => '04',
             'name' => 'DeadCenter',
             'client' => 'Shooting organisations',
@@ -92,7 +104,9 @@ return [
             'status' => 'Live',
             'role' => 'Design, build, and host',
             'stack' => ['Laravel', 'Kotlin', 'Jetpack Compose', 'Room'],
-            'links' => [],
+            'links' => [
+                ['label' => 'deadcenter.co.za', 'href' => 'https://deadcenter.co.za'],
+            ],
             'story' => [
                 [
                     'heading' => 'The job',
@@ -110,6 +124,8 @@ return [
         ],
         [
             'slug' => 'centrevision',
+            'logo' => '/images/brands/centrevision.png',
+            'url' => 'https://centrevision.co.za',
             'index' => '05',
             'name' => 'CentreVision',
             'client' => 'Sites and venues',
@@ -118,7 +134,9 @@ return [
             'status' => 'Live',
             'role' => 'Design, build, and host',
             'stack' => ['Laravel', 'Postgres', 'Redis'],
-            'links' => [],
+            'links' => [
+                ['label' => 'centrevision.co.za', 'href' => 'https://centrevision.co.za'],
+            ],
             'story' => [
                 [
                     'heading' => 'The job',
@@ -136,6 +154,8 @@ return [
         ],
         [
             'slug' => 'ranyati',
+            'logo' => '/images/brands/ranyati.png',
+            'url' => 'https://ranyati.co.za',
             'index' => '06',
             'name' => 'Ranyati',
             'client' => 'Ranyati Firearm Motivations',
@@ -168,6 +188,8 @@ return [
         ],
         [
             'slug' => 'axionis-pos',
+            'logo' => null,
+            'url' => null,
             'index' => '07',
             'name' => 'Axionis POS',
             'client' => 'Axionis',
@@ -194,6 +216,8 @@ return [
         ],
         [
             'slug' => 'charsley-digital',
+            'logo' => null,
+            'url' => 'https://charsleydigital.co.za',
             'index' => '08',
             'name' => 'Charsley Digital',
             'client' => 'This site',

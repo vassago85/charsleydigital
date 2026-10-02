@@ -1,0 +1,20 @@
+# Charsley Digital
+
+> Charsley Digital designs, builds, and hosts web platforms. Membership systems, match scoring, site traffic, and point of sale. Each platform runs in its own containers. The client keeps the data.
+
+The public site is https://charsleydigital.co.za. Case studies live under https://charsleydigital.co.za/work.
+
+## Live platforms
+
+- [NRAPA](https://nrapa.ranyati.co.za): National Rifle and Pistol Association membership, compliance, certificates, and QR verification. Case study: https://charsleydigital.co.za/work/nrapa
+- [SAPRF](https://saprf.co.za): South African Precision Rifle Federation. Membership, PRS and PR22 matches, payments, and national standings. Case study: https://charsleydigital.co.za/work/saprf
+- [Pretoria Rifle & Pistol Club](https://pretoriaprc.co.za): Club membership, match entries, payments, endorsements, and certificates. Case study: https://charsleydigital.co.za/work/pprc
+- [DeadCenter](https://deadcenter.co.za): Match scoring for shooting organisations, including an Android app for the range. Case study: https://charsleydigital.co.za/work/deadcenter
+- [CentreVision](https://centrevision.co.za): Vehicle reads, watchlists, dwell, and traffic reports. It does not control gates. Case study: https://charsleydigital.co.za/work/centrevision
+- [Ranyati Group](https://ranyati.co.za): Firearm licence motivations, NRAPA membership, secure storage, and used firearms. Also https://motivations.ranyati.co.za, https://nrapa.ranyati.co.za, https://storage.ranyati.co.za, https://arms.ranyati.co.za. Case study: https://charsleydigital.co.za/work/ranyati
+- [Axionis POS](https://charsleydigital.co.za/work/axionis-pos): Point of sale. The sale at the counter stays in a system the business owns.
+- [Charsley Digital](https://charsleydigital.co.za): This site, the enquiry form, and the admin that follows up.
+
+## Contact
+
+Enquiries: https://charsleydigital.co.za/#contact

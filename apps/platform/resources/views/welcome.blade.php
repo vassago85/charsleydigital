@@ -5,9 +5,10 @@
 @section('canonical', route('home'))
 
 @push('head')
+    @include('partials.work-graph')
     <script type="application/ld+json">
         {!! json_encode([
-            '@context' => 'https://schema.org',
+            '@@context' => 'https://schema.org',
             '@type' => 'Organization',
             'name' => 'Charsley Digital',
             'url' => 'https://charsleydigital.co.za',
@@ -30,12 +31,29 @@
 
         <div class="rise rise-d3 mx-auto mt-12 max-w-6xl border-t border-white/10">
             @foreach ($projects as $project)
-                <a href="{{ route('work.show', $project['slug']) }}" class="group grid gap-2 border-b border-white/10 px-6 py-5 transition-colors hover:bg-white/5 md:grid-cols-12 md:items-baseline md:gap-6">
-                    <span class="font-mono text-xs text-brand-300 md:col-span-1">{{ $project['index'] }}</span>
-                    <span class="text-lg font-semibold tracking-tight md:col-span-3">{{ $project['name'] }}</span>
-                    <span class="text-sm text-slate-400 md:col-span-6">{{ $project['summary'] }}</span>
-                    <span class="font-mono text-xs uppercase tracking-wider text-slate-500 md:col-span-2 md:text-right group-hover:text-white">{{ $project['status'] }}</span>
-                </a>
+                <div class="grid gap-3 border-b border-white/10 px-6 py-5 transition-colors hover:bg-white/5 md:grid-cols-12 md:items-center md:gap-6">
+                    <a href="{{ route('work.show', $project['slug']) }}" class="grid gap-3 md:col-span-9 md:grid-cols-9 md:items-center md:gap-6">
+                        <span class="flex items-center gap-3 md:col-span-4">
+                            @if ($project['logo'])
+                                <img src="{{ $project['logo'] }}" alt="{{ $project['name'] }} logo" class="h-10 w-10 shrink-0 bg-white object-contain p-1" width="40" height="40">
+                            @else
+                                <span class="flex h-10 w-10 shrink-0 items-center justify-center bg-white text-xs font-bold text-[#0b1220]">{{ $project['index'] }}</span>
+                            @endif
+                            <span>
+                                <span class="block font-mono text-[10px] uppercase tracking-wider text-brand-300">{{ $project['index'] }}</span>
+                                <span class="block text-lg font-semibold tracking-tight">{{ $project['name'] }}</span>
+                            </span>
+                        </span>
+                        <span class="text-sm text-slate-400 md:col-span-5">{{ $project['summary'] }}</span>
+                    </a>
+                    <div class="md:col-span-3 md:text-right">
+                        @if ($project['url'])
+                            <a href="{{ $project['url'] }}" class="text-sm font-medium text-white underline decoration-white/30 underline-offset-4 hover:decoration-white" rel="noopener noreferrer">{{ parse_url($project['url'], PHP_URL_HOST) }}</a>
+                        @else
+                            <span class="font-mono text-xs uppercase tracking-wider text-slate-500">{{ $project['status'] }}</span>
+                        @endif
+                    </div>
+                </div>
             @endforeach
         </div>
     </section>

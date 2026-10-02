@@ -4,13 +4,46 @@
 @section('description', $project['summary'])
 @section('canonical', route('work.show', $project['slug']))
 
+@push('head')
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            'name' => $project['name'].' — built by Charsley Digital',
+            'url' => route('work.show', $project['slug']),
+            'description' => $project['summary'],
+            'about' => array_filter([
+                '@type' => 'WebSite',
+                'name' => $project['name'],
+                'url' => $project['url'],
+                'description' => $project['summary'],
+            ]),
+            'creator' => [
+                '@type' => 'Organization',
+                'name' => 'Charsley Digital',
+                'url' => 'https://charsleydigital.co.za',
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+@endpush
+
 @section('content')
     <section class="ink text-white">
         <div class="mx-auto max-w-6xl px-6 pb-16 pt-12 md:pb-24 md:pt-16">
             <a href="{{ route('work.index') }}" class="font-mono text-xs uppercase tracking-[0.18em] text-slate-400 hover:text-white">All work</a>
-            <p class="mt-8 font-mono text-sm text-brand-300">{{ $project['index'] }} — {{ $project['kicker'] }}</p>
-            <h1 class="mt-3 text-5xl font-semibold tracking-tight md:text-8xl">{{ $project['name'] }}</h1>
+            <div class="mt-8 flex items-end gap-6">
+                @if ($project['logo'])
+                    <img src="{{ $project['logo'] }}" alt="{{ $project['name'] }} logo" class="h-20 w-20 shrink-0 bg-white object-contain p-2" width="80" height="80">
+                @endif
+                <div>
+                    <p class="font-mono text-sm text-brand-300">{{ $project['index'] }} — {{ $project['kicker'] }}</p>
+                    <h1 class="mt-2 text-5xl font-semibold tracking-tight md:text-8xl">{{ $project['name'] }}</h1>
+                </div>
+            </div>
             <p class="mt-4 max-w-2xl text-xl text-slate-300">{{ $project['client'] }}</p>
+            @if ($project['url'])
+                <a href="{{ $project['url'] }}" class="mt-6 inline-block text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white" rel="noopener noreferrer">{{ parse_url($project['url'], PHP_URL_HOST) }}</a>
+            @endif
             <dl class="mt-10 grid gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
                 <div>
                     <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Status</dt>
