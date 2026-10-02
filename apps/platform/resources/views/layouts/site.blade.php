@@ -58,7 +58,6 @@
             </div>
             <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
                 <a href="{{ route('work.index') }}" class="hover:text-white">Work</a>
-                <a href="/ranyati/" class="hover:text-white">Ranyati</a>
                 <a href="{{ route('home') }}#contact" class="hover:text-white">Contact</a>
                 <span>&copy; {{ date('Y') }}</span>
                 @auth
