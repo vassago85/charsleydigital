@@ -188,8 +188,8 @@ return [
         ],
         [
             'slug' => 'axionis-pos',
-            'logo' => null,
-            'url' => null,
+            'logo' => '/images/brands/axionis.png',
+            'url' => 'https://axionis.co.za/',
             'index' => '07',
             'name' => 'Axionis POS',
             'client' => 'Axionis',
@@ -198,7 +198,9 @@ return [
             'status' => 'Live',
             'role' => 'Design, build, and host',
             'stack' => [],
-            'links' => [],
+            'links' => [
+                ['label' => 'axionis.co.za', 'href' => 'https://axionis.co.za/'],
+            ],
             'story' => [
                 [
                     'heading' => 'The job',
@@ -210,7 +212,7 @@ return [
                 ],
                 [
                     'heading' => 'How it runs',
-                    'body' => 'It is hosted with the other platforms, in its own containers on dedicated hardware. The business keeps the data.',
+                    'body' => 'It is live at axionis.co.za, hosted with the other platforms in its own containers. The business keeps the data.',
                 ],
             ],
         ],
