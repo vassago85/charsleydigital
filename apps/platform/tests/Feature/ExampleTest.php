@@ -16,4 +16,17 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_work_pages_are_public(): void
+    {
+        $this->get('/work')->assertOk();
+
+        foreach (config('work.projects') as $project) {
+            $this->get('/work/'.$project['slug'])
+                ->assertOk()
+                ->assertSee($project['name']);
+        }
+
+        $this->get('/work/not-a-project')->assertNotFound();
+    }
 }
